@@ -11,13 +11,19 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@dimforge/rapier3d-compat": "^0.9.0",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
+    "@threlte/core": "^4.3.2",
+    "@threlte/extras": "^4.3.0",
+    "@threlte/rapier": "^0.3.2",
     "@types/cookie": "^0.5.1",
     "prettier": "^2.6.2",
     "prettier-plugin-svelte": "^2.7.0",
+    "rxjs": "^7.5.7",
     "svelte": "^3.46.0",
     "svelte-check": "^2.7.1",
+    "three": "^0.145.0",
     "typescript": "^4.7.4",
     "vite": "^3.0.8"
   },

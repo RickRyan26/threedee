@@ -1,57 +1,81 @@
 <script>
-	import Counter from '$lib/Counter.svelte';
+  import { Canvas } from '@threlte/core';
+  import { Debug, World } from '@threlte/rapier';
+  import { slide } from 'svelte/transition';
+  import Scene from '../lib/Scene.svelte';
+  import { status, time } from '../lib/state';
+  import Timer from '../lib/Timer.svelte';
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
-
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+<Timer />
+<div class="wrapper">
+  <Canvas>
+    <World>
+      <!-- 			<Debug /> -->
+      <Scene />
+    </World>
+  </Canvas>
+  <div class="timer row">
+    <span>
+      {$time}
+    </span>
+  </div>
+  <div class="action row">
+    {#if $status === 'IDLE'}
+      <button on:click={() => ($status = 'PLAYING')} transition:slide> PLAY </button>
+    {:else if $status === 'DONE'}
+      <button on:click={() => ($status = 'IDLE')} in:slide> RESET </button>
+    {/if}
+  </div>
+</div>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
+  * {
+    font-family: Verdana;
+  }
+  .wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: cornsilk;
+  }
+  .row {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
 
-	h1 {
-		width: 100%;
-	}
+  .timer.row {
+    top: 10%;
+    width: 100%;
+    margin: 0;
+    background: #00000055;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
+  .action.row {
+    top: 40%;
+  }
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+  .action.row button {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #00000055;
+    color: white;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: all 200ms ease;
+  }
+
+  .action.row button:hover {
+    border: 2px solid white;
+    background: #000000a1;
+  }
 </style>
