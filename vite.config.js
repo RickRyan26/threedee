@@ -9,6 +9,9 @@ const config = {
   //     external: ['@dimforge/rapier3d-compat']
   //   }
   // },
+  ssr: {
+    noExternal: ['three', 'troika-three-text']
+  },
   server: {
     // configure vite for HMR with Gitpod
     hmr: process.env.GITPOD_WORKSPACE_URL
