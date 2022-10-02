@@ -4,11 +4,11 @@ import path from 'path';
 /** @type {import('vite').UserConfig} */
 const config = {
   plugins: [sveltekit()],
-  build: {
-    rollupOptions: {
-      external: ['@dimforge/rapier3d-compat']
-    }
-  },
+  // build: {
+  //   rollupOptions: {
+  //     external: ['@dimforge/rapier3d-compat']
+  //   }
+  // },
   server: {
     // configure vite for HMR with Gitpod
     hmr: process.env.GITPOD_WORKSPACE_URL
