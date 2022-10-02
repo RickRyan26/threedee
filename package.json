@@ -11,6 +11,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@dimforge/rapier3d-compat": "^0.9.0",
     "@sveltejs/adapter-vercel": "^1.0.0-next.77",
     "@sveltejs/kit": "^1.0.0-next.507",
     "@threlte/core": "^4.3.2",

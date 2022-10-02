@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@dimforge/rapier3d-compat': ^0.9.0
   '@fontsource/fira-mono': ^4.5.9
   '@sveltejs/adapter-vercel': ^1.0.0-next.77
   '@sveltejs/kit': ^1.0.0-next.507
@@ -25,6 +26,7 @@ dependencies:
   web-vitals: 2.1.4
 
 devDependencies:
+  '@dimforge/rapier3d-compat': 0.9.0
   '@sveltejs/adapter-vercel': 1.0.0-next.77
   '@sveltejs/kit': 1.0.0-next.507_svelte@3.50.1+vite@3.1.4
   '@threlte/core': 4.3.2
@@ -41,6 +43,10 @@ devDependencies:
   vite: 3.1.4
 
 packages:
+
+  /@dimforge/rapier3d-compat/0.9.0:
+    resolution: {integrity: sha512-zjgpXS/fFx1lZqjW1DfVUEaRHFpekzWjF6eSGb/xeEUf74YO0NDlQ93Hj0oI2k+i6QIoQk9KcIaEGwQZkullrw==}
+    dev: true
 
   /@esbuild/android-arm/0.15.10:
     resolution: {integrity: sha512-FNONeQPy/ox+5NBkcSbYJxoXj9GWu8gVGJTVmUyoOCKQFDTrHVKgNSzChdNt0I8Aj/iKcsDf2r9BFwv+FSNUXg==}
